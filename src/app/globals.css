@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-sans), "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --color-warm-ivory: #FAF7F2;
+  --color-soft-cream: #F4EFE6;
+  --color-warm-sand: #EAE3D6;
+  --color-warm-linen: #FBF9F6;
+  
+  --color-deep-espresso: #1A1615;
+  --color-charcoal: #2C2724;
+  --color-muted-stone: #6B6560;
+  
+  --color-champagne-300: #E6D7BE;
+  --color-champagne-400: #C5A880;
+  --color-champagne-500: #B38F5F;
+  --color-champagne-600: #997448;
+  
+  --color-jaipur-terracotta: #B85D43;
+  --color-jaipur-rose: #C97A63;
+  --color-border-warm: rgba(197, 168, 128, 0.22);
+  --color-border-subtle: rgba(44, 39, 36, 0.08);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF7F2;
+  --foreground: #1A1615;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF7F2;
+  color: #1A1615;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAF7F2;
+  color: #1A1615;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #C5A880;
+  color: #FAF7F2;
+}
+
+/* Custom Fashion Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CEBF;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Subtle Editorial Typography Utilities */
+.tracking-editorial {
+  letter-spacing: 0.18em;
+}
+
+.tracking-widest-editorial {
+  letter-spacing: 0.28em;
+}
+
+/* Fine hairline borders */
+.border-warm-subtle {
+  border-color: rgba(44, 39, 36, 0.08);
+}
+
+.border-champagne {
+  border-color: rgba(197, 168, 128, 0.28);
+}
+
+/* Elegant Warm Shimmer */
+.gold-shimmer {
+  background: linear-gradient(
+    110deg,
+    rgba(197, 168, 128, 0.08) 0%,
+    rgba(223, 201, 165, 0.28) 50%,
+    rgba(197, 168, 128, 0.08) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Image zoom transition */
+.image-zoom-container {
+  overflow: hidden;
+}
+
+.image-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.06);
 }
